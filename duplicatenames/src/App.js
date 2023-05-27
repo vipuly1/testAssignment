@@ -70,18 +70,13 @@ function App() {
        if(isPresent !== -1){
         console.log(isPresent)
         let value = map1[isPresent].count
+        map1[isPresent].count =  value + 1
         
         if(value + 1 >=3 && value + 1 <10){
-       map1[isPresent].count =  value + 1
-       map1[isPresent].color =  "yellow" 
+          map1[isPresent].color =  "yellow" 
         }
         else if ( value + 1 > 10){
-          map1[isPresent].count =  value + 1
-       map1[isPresent].color =  "green"
-        }
-        else{
-          map1[isPresent].count =  value + 1
-          
+          map1[isPresent].color =  "green"
         }
        }
        else if(isPresent == -1){
@@ -101,9 +96,6 @@ function App() {
   
 
   return <div className="App">
-    {/* {sortedData.map(item=>{
-      console.log(item.key)
-    })} */}
     <div>
     <table>
       <thead>
