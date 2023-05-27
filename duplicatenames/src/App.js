@@ -62,7 +62,7 @@ function App() {
 
   useEffect(() => {
     
-    let map1 = [{name : "Ram", count: 0, color: "red"}]
+    let map1 = [{}]
 
     for(let i = 0; i<data.length;i++){
       //console.log(item.name)
@@ -73,10 +73,10 @@ function App() {
         map1[isPresent].count =  value + 1
         
         if(value + 1 >=3 && value + 1 <10){
-          map1[isPresent].color =  "yellow" 
+       map1[isPresent].color =  "yellow" 
         }
         else if ( value + 1 > 10){
-          map1[isPresent].color =  "green"
+       map1[isPresent].color =  "green"
         }
        }
        else if(isPresent == -1){
@@ -105,8 +105,8 @@ function App() {
       </tr>
       </thead>
       <tbody>
-        {sortedData.map(item=>{
-      return (<tr>
+        {sortedData.map((item,i)=>{
+      return (<tr key={i}>
         <td bgcolor={item.color}>{item.name}</td>
         <td bgcolor={item.color}>{item.count}</td>
       </tr>)
